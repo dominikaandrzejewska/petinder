@@ -17,7 +17,7 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create location" do
     assert_difference('Location.count') do
-      post locations_url, params: { location: { address: @location.address, name: @location.name, type: @location.type } }
+      post locations_url, params: { location: { address: @location.address, name: @location.name, type_of: @location.type } }
     end
 
     assert_redirected_to location_url(Location.last)

@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_135846) do
+ActiveRecord::Schema.define(version: 2019_09_21_141333) do
 
   create_table "locations", force: :cascade do |t|
-    t.string "type"
+    t.string "type_of"
     t.string "name"
     t.string "address"
     t.datetime "created_at", null: false

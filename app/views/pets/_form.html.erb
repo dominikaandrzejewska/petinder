@@ -34,7 +34,12 @@
   <div class="field">
   <%= form.label :is_adopted %>
   <%= form.check_box :is_adopted %>
-</div>
+  </div>
+
+  <div class="field">
+  <%= form.label :locations %>
+  <%= form.collection_select :location_id, Location.order(:name),:id,:name %>
+  </div>
 
 
   <div class="actions">

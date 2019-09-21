@@ -40,6 +40,7 @@ class PetsController < ApplicationController
   # PATCH/PUT /pets/1
   # PATCH/PUT /pets/1.json
   def update
+    binding.pry
     respond_to do |format|
       if @pet.update(pet_params)
         format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
@@ -69,6 +70,6 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:species, :age, :name, :description, :is_adopted)
+      params.require(:pet).permit(:species, :age, :name, :description, :is_adopted, :location_id)
     end
 end
