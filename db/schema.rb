@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_120231) do
+ActiveRecord::Schema.define(version: 2019_09_21_135846) do
+
+  create_table "locations", force: :cascade do |t|
+    t.string "type"
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pets", force: :cascade do |t|
     t.string "species"
@@ -20,6 +28,8 @@ ActiveRecord::Schema.define(version: 2019_09_21_120231) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_adopted"
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_pets_on_location_id"
   end
 
 end
